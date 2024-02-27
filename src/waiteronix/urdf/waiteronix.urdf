@@ -2,6 +2,7 @@
 <!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
      Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+
 <robot
   name="waiteronix">
   <link name="dummy">
@@ -46,10 +47,12 @@
       </geometry>
     </collision>
   </link>
-  <joint name="dummy_joint" type="fixed">
-     <parent link="dummy"/>
-     <child link="base_link"/>
+
+ <joint name="dummy_joint" type="fixed">
+    <parent link="dummy"/>
+    <child link="base_link"/>
    </joint>
+
   <link
     name="Body">
     <inertial>
@@ -90,6 +93,7 @@
       </geometry>
     </collision>
   </link>
+
   <joint
     name="Body_Joint"
     type="fixed">
@@ -103,6 +107,8 @@
     <axis
       xyz="0 0 0" />
   </joint>
+
+
   <link
     name="Right_Wheel">
     <inertial>
@@ -143,6 +149,7 @@
       </geometry>
     </collision>
   </link>
+
   <joint
     name="Right_Wheel_Joint"
     type="continuous">
@@ -159,6 +166,8 @@
       effort="40"
       velocity="10" />
   </joint>
+
+
   <link
     name="Left_Wheel">
     <inertial>
@@ -199,6 +208,7 @@
       </geometry>
     </collision>
   </link>
+
   <joint
     name="Left_Wheel_Joint"
     type="continuous">
@@ -215,6 +225,8 @@
       effort="40"
       velocity="10" />
   </joint>
+
+
   <link
     name="Camera">
     <inertial>
@@ -255,6 +267,7 @@
       </geometry>
     </collision>
   </link>
+
   <joint
     name="Camera_Joint"
     type="fixed">
@@ -268,6 +281,51 @@
     <axis
       xyz="1 0 0" />
   </joint>
+
+<!--camera plugin-->
+  <gazebo reference="$Camera">
+  <sensor name="$Camera_camera" type="depth">
+    <update_rate>20</update_rate>
+    <camera>
+      <horizontal_fov>1.047198</horizontal_fov>
+      <image>
+        <width>640</width>
+        <height>480</height>
+        <format>R8G8B8</format>
+      </image>
+      <clip>
+        <near>0.05</near>
+        <far>3</far>
+      </clip>
+    </camera>
+    <plugin name="$Camera_controller" filename="libgazebo_ros_openni_kinect.so">
+      <baseline>0.2</baseline>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>1.0</updateRate>
+      <cameraName>$kinect_ir</cameraName>
+      <imageTopicName>/$kinect/color/image_raw</imageTopicName>
+      <cameraInfoTopicName>/$kinect/color/camera_info</cameraInfoTopicName>
+      <depthImageTopicName>/$kinect/depth/image_raw</depthImageTopicName>
+      <depthImageInfoTopicName>/$kinect/depth/camera_info</depthImageInfoTopicName>
+      <pointCloudTopicName>/$kinect/depth/points</pointCloudTopicName>
+      <frameName>$camera_depth_frame</frameName>
+      <pointCloudCutoff>0.5</pointCloudCutoff>
+      <pointCloudCutoffMax>3.0</pointCloudCutoffMax>
+      <distortionK1>0.00000001</distortionK1>
+      <distortionK2>0.00000001</distortionK2>
+      <distortionK3>0.00000001</distortionK3>
+      <distortionT1>0.00000001</distortionT1>
+      <distortionT2>0.00000001</distortionT2>
+      <CxPrime>0</CxPrime>
+      <Cx>0</Cx>
+      <Cy>0</Cy>
+      <focalLength>0</focalLength>
+      <hackBaseline>0</hackBaseline>
+    </plugin>
+  </sensor>
+</gazebo>
+
+
   <link
     name="Lidar">
     <inertial>
@@ -308,6 +366,7 @@
       </geometry>
     </collision>
   </link>
+
   <joint
     name="Lidar_Joint"
     type="fixed">
@@ -321,6 +380,39 @@
     <axis
       xyz="0 0 1" />
   </joint>
+
+<!--rplidar a1 plugin-->
+<gazebo reference="Lidar">
+        <material>Gazebo/Red</material>
+
+        <sensor name="laser" type="ray">
+            <pose> 0 0 0 0 0 0 </pose>
+            <visualize>true</visualize>
+            <update_rate>10</update_rate>
+            <ray>
+                <scan>
+                    <horizontal>
+                        <samples>360</samples>
+                        <min_angle>-3.14</min_angle>
+                        <max_angle>3.14</max_angle>
+                    </horizontal>
+                </scan>
+                <range>
+                    <min>0.3</min>
+                    <max>12</max>
+                </range>
+            </ray>
+            <plugin name="laser_controller" filename="libgazebo_ros_ray_sensor.so">
+                <ros>
+                    <argument>~/out:=scan</argument>
+                </ros>
+                <output_type>sensor_msgs/LaserScan</output_type>
+                <frame_name>laser_frame</frame_name>
+            </plugin>
+        </sensor>
+</gazebo>
+
+
   <link
     name="IMU">
     <inertial>
@@ -361,6 +453,7 @@
       </geometry>
     </collision>
   </link>
+
   <joint
     name="IMU_Joint"
     type="fixed">
@@ -374,6 +467,30 @@
     <axis
       xyz="0 0 1" />
   </joint>
+
+<!--imu plugin-->
+  <gazebo reference="IMU">
+    <gravity>true</gravity>
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <topic>__default_topic__</topic>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>imu</topicName>
+        <bodyName>imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>imu_link</frameName>
+        <initialOrientationAsReference>false</initialOrientationAsReference>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+
+
   <link
     name="F_W_Front_Left">
     <inertial>
@@ -414,6 +531,7 @@
       </geometry>
     </collision>
   </link>
+
   <joint
     name="F_W_Front_Left_Joint"
     type="fixed">
@@ -427,6 +545,8 @@
     <axis
       xyz="0 1 0" />
   </joint>
+
+
   <link
     name="F_W_Front_Right">
     <inertial>
@@ -467,6 +587,7 @@
       </geometry>
     </collision>
   </link>
+
   <joint
     name="F_W_Front_Right_Joint"
     type="fixed">
@@ -480,6 +601,8 @@
     <axis
       xyz="0 1 0" />
   </joint>
+
+
   <link
     name="F_W_Back_Left">
     <inertial>
@@ -520,6 +643,7 @@
       </geometry>
     </collision>
   </link>
+
   <joint
     name="F_W_Back_Left_Joint"
     type="fixed">
@@ -533,6 +657,8 @@
     <axis
       xyz="0 1 0" />
   </joint>
+
+
   <link
     name="F_W_Back_Right">
     <inertial>
@@ -573,6 +699,7 @@
       </geometry>
     </collision>
   </link>
+
   <joint
     name="F_W_Back_Right_Joint"
     type="fixed">
@@ -586,4 +713,6 @@
     <axis
       xyz="0 1 0" />
   </joint>
+
+
 </robot>
