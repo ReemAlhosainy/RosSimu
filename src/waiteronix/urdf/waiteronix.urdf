@@ -7,6 +7,7 @@
   name="waiteronix">
   <link name="dummy">
    </link>
+   
   <link
     name="base_link">
     <inertial>
@@ -48,7 +49,7 @@
     </collision>
   </link>
 
- <joint name="dummy_joint" type="fixed">
+<joint name="dummy_joint" type="fixed">
     <parent link="dummy"/>
     <child link="base_link"/>
    </joint>
