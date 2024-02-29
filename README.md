@@ -44,3 +44,80 @@ so , I added dummy link
 log file: /home/emanelsayed/.ros/log/0619a3c0-d5b1-11ee-93ee-2fc0cae9f949/myrobot_spawn-3*.log
 
  ```
+### after test it step by step noticed that :
+- #### this gazebo.launch is okey but it launch empty environment 
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+  <!-- custom gazebo arguements-->
+  <arg name="world" default="empty"/>
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/> 
+  <arg name="debug" default="false"/>
+
+```
+World File
+```
+  
+  
+    <include
+    file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="headless" value="$(arg headless)"/>
+    <arg name="debug" value="$(arg debug)"/>
+  </include>
+  
+```
+```
+	<!-- Find my robot Description-->
+   <param
+    name="robot_description"
+    textfile="$(find waiteronix)/urdf/waiteronix.urdf" />
+    
+   <node
+    name="spawn_model"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find waiteronix)/urdf/waiteronix.urdf -urdf -model waiteronix"
+    output="screen" /> 
+
+
+   
+  <!-- Send fake joint values-->
+
+    
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="use_gui" value="false"/>
+  </node>
+
+  <!-- Send robot states to tf -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen"/>
+   
+  <node name="rviz" pkg="rviz" type="rviz" /> 
+
+
+</launch>
+```
+
+- #### afer replace world file with this section , robot fall 
+```
+  
+    <arg name="world_name" value="$(find gazebo_pkg)/worlds/cafe.world"/>
+    <include
+    file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(arg world_name)"/>
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="headless" value="$(arg headless)"/>
+    <arg name="debug" value="$(arg debug)"/>
+  </include>
+  ```
+
+
+
