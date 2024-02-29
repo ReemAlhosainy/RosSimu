@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
 <launch>
-
   <arg
     name="model" />
   <param
@@ -9,10 +7,7 @@
   <node
     name="joint_state_publisher_gui"
     pkg="joint_state_publisher_gui"
-    type="joint_state_publisher_gui">
-    <param name="use_gui" value="false"/>
-  </node>
-
+    type="joint_state_publisher_gui" />
   <node
     name="robot_state_publisher"
     pkg="robot_state_publisher"

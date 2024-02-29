@@ -2,10 +2,9 @@
 <!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
      Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
-
 <robot
   name="waiteronix">
- <link name="dummy">
+  <link name="dummy">
    </link>
    
   <link
@@ -48,12 +47,12 @@
       </geometry>
     </collision>
   </link>
-
-<joint name="dummy_joint" type="fixed">
+  
+  <joint name="dummy_joint" type="fixed">
     <parent link="dummy"/>
     <child link="base_link"/>
    </joint>
-
+   
   <link
     name="Body">
     <inertial>
@@ -94,7 +93,6 @@
       </geometry>
     </collision>
   </link>
-
   <joint
     name="Body_Joint"
     type="fixed">
@@ -108,8 +106,6 @@
     <axis
       xyz="0 0 0" />
   </joint>
-
-
   <link
     name="Right_Wheel">
     <inertial>
@@ -150,7 +146,6 @@
       </geometry>
     </collision>
   </link>
-
   <joint
     name="Right_Wheel_Joint"
     type="continuous">
@@ -167,8 +162,6 @@
       effort="40"
       velocity="10" />
   </joint>
-
-
   <link
     name="Left_Wheel">
     <inertial>
@@ -209,7 +202,6 @@
       </geometry>
     </collision>
   </link>
-
   <joint
     name="Left_Wheel_Joint"
     type="continuous">
@@ -226,8 +218,6 @@
       effort="40"
       velocity="10" />
   </joint>
-
-
   <link
     name="Camera">
     <inertial>
@@ -268,7 +258,6 @@
       </geometry>
     </collision>
   </link>
-
   <joint
     name="Camera_Joint"
     type="fixed">
@@ -282,8 +271,8 @@
     <axis
       xyz="1 0 0" />
   </joint>
-
-    <!--camera plugin-->
+  
+   <!--camera plugin-->
   <gazebo reference="Camera">
   <sensor name="Camera_camera" type="depth">
     <update_rate>20</update_rate>
@@ -326,8 +315,6 @@
   </sensor>
 </gazebo>
 
-
-
   <link
     name="Lidar">
     <inertial>
@@ -368,7 +355,6 @@
       </geometry>
     </collision>
   </link>
-
   <joint
     name="Lidar_Joint"
     type="fixed">
@@ -382,8 +368,8 @@
     <axis
       xyz="0 0 1" />
   </joint>
-
-  <!--rplidar a1 plugin-->
+  
+    <!--rplidar a1 plugin-->
     <gazebo reference="Lidar">
         <sensor type="ray" name="head_hokuyo_sensor">
             <pose>0 0 0 0 0 0</pose>
@@ -420,8 +406,6 @@
         </sensor>
     </gazebo>
     
-
-
   <link
     name="IMU">
     <inertial>
@@ -462,7 +446,6 @@
       </geometry>
     </collision>
   </link>
-
   <joint
     name="IMU_Joint"
     type="fixed">
@@ -476,8 +459,8 @@
     <axis
       xyz="0 0 1" />
   </joint>
-
-
+  
+  
 <!--imu plugin-->
   <gazebo reference="IMU">
     <gravity>true</gravity>
@@ -500,8 +483,6 @@
     </sensor>
   </gazebo>
   
-
-
   <link
     name="F_W_Front_Left">
     <inertial>
@@ -542,7 +523,6 @@
       </geometry>
     </collision>
   </link>
-
   <joint
     name="F_W_Front_Left_Joint"
     type="fixed">
@@ -556,8 +536,6 @@
     <axis
       xyz="0 1 0" />
   </joint>
-
-
   <link
     name="F_W_Front_Right">
     <inertial>
@@ -598,7 +576,6 @@
       </geometry>
     </collision>
   </link>
-
   <joint
     name="F_W_Front_Right_Joint"
     type="fixed">
@@ -612,8 +589,6 @@
     <axis
       xyz="0 1 0" />
   </joint>
-
-
   <link
     name="F_W_Back_Left">
     <inertial>
@@ -654,7 +629,6 @@
       </geometry>
     </collision>
   </link>
-
   <joint
     name="F_W_Back_Left_Joint"
     type="fixed">
@@ -668,8 +642,6 @@
     <axis
       xyz="0 1 0" />
   </joint>
-
-
   <link
     name="F_W_Back_Right">
     <inertial>
@@ -710,7 +682,6 @@
       </geometry>
     </collision>
   </link>
-
   <joint
     name="F_W_Back_Right_Joint"
     type="fixed">
@@ -724,6 +695,4 @@
     <axis
       xyz="0 1 0" />
   </joint>
-
-
 </robot>
