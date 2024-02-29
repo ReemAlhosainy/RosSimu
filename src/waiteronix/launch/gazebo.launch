@@ -11,8 +11,10 @@
 
   <!--World File-->
   
+    <arg name="world_name" value="$(find gazebo_pkg)/worlds/cafe.world"/>
     <include
-    file="$(find gazebo_ros)/launch/empty_world.launch" >
+    file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(arg world_name)"/>
     <arg name="paused" value="$(arg paused)"/>
     <arg name="use_sim_time" value="$(arg use_sim_time)"/>
     <arg name="gui" value="$(arg gui)"/>
