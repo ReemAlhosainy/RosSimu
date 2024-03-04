@@ -6,7 +6,7 @@
     name="F_W_Front_Left">
     <inertial>
       <origin
-        xyz="0.13868 0.123 0.005"
+        xyz="-0.13868 0.123 0.005"
         rpy="0 0 0" />
       <mass
         value="0.059636" />
@@ -59,7 +59,7 @@
     name="F_W_Front_Right">
     <inertial>
       <origin
-        xyz="0.13868 -0.123 .005"
+        xyz="0.13868 0.123 .005"
         rpy="0 0 0" />
       <mass
         value="0.059636" />
@@ -97,7 +97,7 @@
   </link>
   <joint
     name="F_W_Front_Right_Joint"
-    type="fixed">
+     type="fixed">
     <origin
       xyz="0 0 0"
       rpy="0 0 0" />
@@ -112,7 +112,7 @@
     name="F_W_Back_Left">
     <inertial>
       <origin
-        xyz="-0.19 0.1215 .005"
+        xyz="-0.13868 -0.123 .005"
         rpy="0 0 0" />
       <mass
         value="0.059636" />
@@ -165,7 +165,7 @@
     name="F_W_Back_Right">
     <inertial>
       <origin
-        xyz="-0.19 -0.1215 0.005"
+        xyz="0.19 -0.1215 0.005"
         rpy="0 0 0" />
       <mass
         value="0.059636" />
