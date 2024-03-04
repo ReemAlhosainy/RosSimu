@@ -14,8 +14,8 @@
         <robotBaseFrame>robot_footprint</robotBaseFrame>
         <leftJoint>Left_Wheel_Joint</leftJoint>
         <rightJoint>Right_Wheel_Joint</rightJoint>
-        <wheelSeparation>0.3288</wheelSeparation> 
-        <wheelDiameter>0.13</wheelDiameter>
+        <wheelSeparation>0.448</wheelSeparation> 
+        <wheelDiameter>0.16</wheelDiameter>
         <wheelAcceleration>2.0</wheelAcceleration>
         <wheelTorque>100</wheelTorque>
         <commandTopic>cmd_vel</commandTopic>

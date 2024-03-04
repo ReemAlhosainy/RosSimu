@@ -1,0 +1,170 @@
+<?xml version="1.0" ?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+ <link
+    name="Camera">
+    <inertial>
+      <origin
+        xyz="-0.027769 0.064365 -0.00028163"
+        rpy="0 0 0" />
+      <mass
+        value="0.55893" />
+      <inertia
+        ixx="0.0029329"
+        ixy="-9.3578E-07"
+        ixz="8.9611E-08"
+        iyy="0.00023177"
+        iyz="-9.4508E-09"
+        izz="0.0030272" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiteronix/meshes/Camera.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49412 0.49412 0.49412 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiteronix/meshes/Camera.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Camera_Joint"
+    type="fixed">
+    <origin
+      xyz="0.24478 -0.064307 0.0965"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Camera" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  
+
+
+  <link
+    name="Lidar">
+    <inertial>
+      <origin
+        xyz="8.3267E-17 -1.9976E-15 -0.013917"
+        rpy="0 0 0" />
+      <mass
+        value="0.12331" />
+      <inertia
+        ixx="8.5672E-05"
+        ixy="-3.3087E-22"
+        ixz="-3.3193E-19"
+        iyy="8.5672E-05"
+        iyz="-1.4388E-23"
+        izz="0.00010203" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiteronix/meshes/Lidar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0.75294 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiteronix/meshes/Lidar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Lidar_Joint"
+    type="fixed">
+    <origin
+      xyz="0.185 0 0.21663"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Lidar" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  
+
+    
+  <link
+    name="IMU">
+    <inertial>
+      <origin
+        xyz="-1.8518E-16 -6.2326E-15 -0.005"
+        rpy="0 0 0" />
+      <mass
+        value="0.0007854" />
+      <inertia
+        ixx="1.1454E-08"
+        ixy="1.831E-25"
+        ixz="-3.3736E-23"
+        iyy="1.1454E-08"
+        iyz="1.7323E-23"
+        izz="9.8175E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiteronix/meshes/IMU.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0.75294 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiteronix/meshes/IMU.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="IMU_Joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.289"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="IMU" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+</robot>
