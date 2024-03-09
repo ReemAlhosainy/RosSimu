@@ -31,5 +31,6 @@ source devel/setup.bash
 roslaunch PKG_NAME FILE.LAUNCH
 ```
 
->Note: keep in mind that WheelSperatation = "0.0"
+>Note: when we add the cafe environment the robot doesnt fall
+>It walks but not in a stable way especially when walking forward
 
