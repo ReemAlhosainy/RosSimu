@@ -28,7 +28,8 @@ source devel/setup.bash
 ## Run
 
 ```bash
-roslaunch PKG_NAME FILE.LAUNCH
+roslaunch PKG_NAME gazebo.launch
+then rosrun rviz rviz
 ```
 
 >Note: when we add the cafe environment the robot doesnt fall
