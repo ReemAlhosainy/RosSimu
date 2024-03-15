@@ -30,7 +30,7 @@ source devel/setup.bash
 ## Run
 
 ```bash
-roslaunch waiteronix11 gazebo.launch
+roslaunch waiteronix_description gazebo.launch
 ```
 
 >Note : there is a large block (cube) added on the end of the robot to make robot more balanced
@@ -41,5 +41,5 @@ roslaunch waiteronix11 gazebo.launch
 add your world into "gazebo_pkg/worlds
 ```
 ```
-edit line 13 in "waiteronix11/launch/gazebo.launch" to add your desired world_name
+edit line 13 in "waiteronix_description/launch/gazebo.launch" to add your desired world_name
 ```

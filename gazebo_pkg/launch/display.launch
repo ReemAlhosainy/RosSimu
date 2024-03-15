@@ -3,7 +3,7 @@
     name="model" />
   <param
     name="robot_description"
-    textfile="$(find waiteronix11)/urdf/waiteronix11.urdf" />
+    textfile="$(find waiteronix_description)/urdf/waiteronix_description.urdf" />
   <node
     name="joint_state_publisher_gui"
     pkg="joint_state_publisher_gui"
@@ -16,5 +16,5 @@
     name="rviz"
     pkg="rviz"
     type="rviz"
-    args="-d $(find waiteronix11)/urdf.rviz" />
+    args="-d $(find waiteronix_description)/urdf.rviz" />
 </launch>

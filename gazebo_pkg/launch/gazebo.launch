@@ -22,8 +22,8 @@
     <arg name="verbose" value="false"/>
   </include>
  
-  <param command="$(find xacro)/xacro '$(find waiteronix11)/urdf/waiteronix.xacro'" name="robot_description"/>
-  <node args="-param robot_description -urdf -model waiteronix11" name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"/>
+  <param command="$(find xacro)/xacro '$(find waiteronix_description)/urdf/waiteronix.xacro'" name="robot_description"/>
+  <node args="-param robot_description -urdf -model waiteronix_description" name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"/>
 
   <!-- Send fake joint values-->
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">

@@ -3,8 +3,8 @@
      Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
-  name="waiteronix11" xmlns:xacro="http://www.ros.org/wiki/xacro">
-    <xacro:include filename="$(find waiteronix11)/urdf/waiteronix.gazebo"/>
+  name="waiteronix_description" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:include filename="$(find waiteronix_description)/urdf/waiteronix.gazebo"/>
   <link
     name="base_link">
     <inertial>
@@ -27,7 +27,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://waiteronix11/meshes/base_link.STL" />
+          filename="package://waiteronix_description/meshes/base_link.STL" />
       </geometry>
       <material
         name="">
@@ -41,7 +41,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://waiteronix11/meshes/base_link.STL" />
+          filename="package://waiteronix_description/meshes/base_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -67,7 +67,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://waiteronix11/meshes/right_wheel_Link.STL" />
+          filename="package://waiteronix_description/meshes/right_wheel_Link.STL" />
       </geometry>
       <material
         name="">
@@ -81,7 +81,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://waiteronix11/meshes/right_wheel_Link.STL" />
+          filename="package://waiteronix_description/meshes/right_wheel_Link.STL" />
       </geometry>
     </collision>
   </link>
@@ -120,7 +120,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://waiteronix11/meshes/left_wheel_Link.STL" />
+          filename="package://waiteronix_description/meshes/left_wheel_Link.STL" />
       </geometry>
       <material
         name="">
@@ -134,7 +134,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://waiteronix11/meshes/left_wheel_Link.STL" />
+          filename="package://waiteronix_description/meshes/left_wheel_Link.STL" />
       </geometry>
     </collision>
   </link>
@@ -173,7 +173,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://waiteronix11/meshes/imu_Link.STL" />
+          filename="package://waiteronix_description/meshes/imu_Link.STL" />
       </geometry>
       <material
         name="">
@@ -187,7 +187,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://waiteronix11/meshes/imu_Link.STL" />
+          filename="package://waiteronix_description/meshes/imu_Link.STL" />
       </geometry>
     </collision>
   </link>
@@ -226,7 +226,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://waiteronix11/meshes/camera_Link.STL" />
+          filename="package://waiteronix_description/meshes/camera_Link.STL" />
       </geometry>
       <material
         name="">
@@ -240,7 +240,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://waiteronix11/meshes/camera_Link.STL" />
+          filename="package://waiteronix_description/meshes/camera_Link.STL" />
       </geometry>
     </collision>
   </link>
@@ -279,7 +279,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://waiteronix11/meshes/lidar_Link.STL" />
+          filename="package://waiteronix_description/meshes/lidar_Link.STL" />
       </geometry>
       <material
         name="">
@@ -293,7 +293,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://waiteronix11/meshes/lidar_Link.STL" />
+          filename="package://waiteronix_description/meshes/lidar_Link.STL" />
       </geometry>
     </collision>
   </link>
