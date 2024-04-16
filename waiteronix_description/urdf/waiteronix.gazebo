@@ -7,7 +7,7 @@
       <robotNamespace>waiteronix_description</robotNamespace>	
       </plugin>
   </gazebo>
- 
+
   <gazebo>
   <!-- This can help us i copied it from a website as i found some differents from our code
       <left_joint>left_wheel_joint</left_joint>
