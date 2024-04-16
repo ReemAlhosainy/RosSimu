@@ -1,0 +1,5 @@
+global_frame: map
+rolling_window: false
+width: 10.0
+height: 10.0
+
