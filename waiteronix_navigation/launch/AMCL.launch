@@ -1,0 +1,14 @@
+<launch>
+  <arg name="use_sim_time" default="true"/>
+  <param name="use_sim_time" value="$(arg use_sim_time)"/>
+  
+    <rosparam file="$(find waiter_robot_navigation_pkg)/config/costmap_common_params.yaml" command="load" />
+    <rosparam file="$(find waiter_robot_navigation_pkg)/config/costmap_common_params.yaml" command="load" />
+    <rosparam file="$(find waiter_robot_navigation_pkg)/config/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find waiter_robot_navigation_pkg)/config/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find waiter_robot_navigation_pkg)/config/move_base_params.yaml" command="load" />
+    <rosparam file="$(find waiter_robot_navigation_pkg)/config/global_planner_params.yaml" command="load" /> 
+    <rosparam file="$(find waiter_robot_navigation_pkg)/config/dwa_local_planner_params.yaml" command="load" />
+    
+</launch>
+
