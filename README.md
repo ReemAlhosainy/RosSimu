@@ -1,9 +1,11 @@
 # Waiteronix_description
-
-This package contian description of waiteronix robot. 
+This package contians the description of waiteronix robot. 
 
 # waiteronix_gazebo
-this packege contain simulation of waiteronix robot .
+this packege contains the simulation of waiteronix robot .
+
+# waiteronix_navigation
+this packege contains the navigation of waiteronix robot .
 ## Dependencies
 
 * Ununtu 20.04
