@@ -1,14 +1,24 @@
+<?xml version="1.0"?>
 <launch>
-  <arg name="use_sim_time" default="true"/>
-  <param name="use_sim_time" value="$(arg use_sim_time)"/>
-  
-    <rosparam file="$(find waiter_robot_navigation_pkg)/config/costmap_common_params.yaml" command="load" />
-    <rosparam file="$(find waiter_robot_navigation_pkg)/config/costmap_common_params.yaml" command="load" />
-    <rosparam file="$(find waiter_robot_navigation_pkg)/config/local_costmap_params.yaml" command="load" />
-    <rosparam file="$(find waiter_robot_navigation_pkg)/config/global_costmap_params.yaml" command="load" />
-    <rosparam file="$(find waiter_robot_navigation_pkg)/config/move_base_params.yaml" command="load" />
-    <rosparam file="$(find waiter_robot_navigation_pkg)/config/global_planner_params.yaml" command="load" /> 
-    <rosparam file="$(find waiter_robot_navigation_pkg)/config/dwa_local_planner_params.yaml" command="load" />
-    
-</launch>
 
+  <!-- Map real robot -->
+  <arg name="map_file" default="$(find waiteronix_navigation)/map/map.yaml"/>
+  <master auto="start"/>
+
+  <!-- Map simulation -->
+  <!-- <arg name="map_file" default="$(find waiteronix_navigation)/maps/arche/arche.yaml"/>
+  <master auto="start"/> -->
+
+  <!-- Map server -->
+  <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
+  
+  <!-- AMCL -->
+  <include file="$(find waiteronix_navigation)/launch/amcl.launch"/>
+
+  <!-- move_base -->
+  <include file="$(find waiteronix_navigation)/launch/move_base.launch"/>
+
+  <!-- Rviz for navigation -->
+  <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find waiteronix_navigation)/rviz/waiteronix.rviz"/>  -->
+
+</launch>
