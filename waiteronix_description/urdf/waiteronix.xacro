@@ -96,7 +96,7 @@
     <child
       link="right_wheel_Link" />
     <axis
-      xyz="0 -1 0" />
+      xyz="0 1 0" />
   </joint>
   <link
     name="left_wheel_Link">
@@ -149,7 +149,7 @@
     <child
       link="left_wheel_Link" />
     <axis
-      xyz="0 -1 0" />
+      xyz="0 1 0" />
   </joint>
   <link
     name="imu_Link">

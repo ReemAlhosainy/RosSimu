@@ -12,7 +12,7 @@ global_costmap:
    plugins:
      - {name: static_layer,            type: "costmap_2d::StaticLayer"} #static map
      - {name: laser_layer,             type: "costmap_2d::ObstacleLayer"} #laser use on walls and objects
-     - {name: rgbd_obstacle_layer,     type: "spatio_temporal_voxel_layer/SpatioTemporalVoxelLayer"}
+#    - {name: rgbd_obstacle_layer,     type: "spatio_temporal_voxel_layer/SpatioTemporalVoxelLayer"}
      - {name: inflation_layer,         type: "costmap_2d::InflationLayer"} #inflation layer
 
 
