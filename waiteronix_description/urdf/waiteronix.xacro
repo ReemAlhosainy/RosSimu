@@ -5,6 +5,8 @@
 <robot
   name="waiteronix_description" xmlns:xacro="http://www.ros.org/wiki/xacro">
   <xacro:include filename="$(find waiteronix_description)/urdf/waiteronix.gazebo"/>
+  <link name="robot_footprint">
+  </link>
   <link
     name="base_link">
     <inertial>
@@ -85,6 +87,11 @@
       </geometry>
     </collision>
   </link>
+      <joint name="dummy_joint" type="fixed">
+    <parent link="robot_footprint"/>
+    <child link="base_link"/>
+   </joint>
+
   <joint
     name="right_wheel_joint"
     type="continuous">

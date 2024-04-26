@@ -3,7 +3,7 @@ max_obstacle_height: 1.5 #2.0
 # Obstacle Cost Shaping (http://wiki.ros.org/costmap_2d/hydro/inflation)
 # robot_radius: 0.295  # distance a circular robot should be clear of the obstacle (kobuki: 0.18)
 # footprint: [[x0, y0], [x1, y1], ... [xn, yn]]  # if the robot is not circular
-footprint: [[-0.25,-0.20 ], [-0.25, 0.20,], [0.25, 0.20], [0.25, -0.20]]
+footprint: [[-0.25,-0.25 ], [-0.25, 0.25,], [0.25, 0.25], [0.25, -0.25]]
 # footprint: [[0.0,-0.21],[0.18,-0.21],[0.23,-0.15],[0.25,-0.12],[0.26,-0.10],[0.27,-0.08],[0.28,-0.05],[0.285,-0.03],[0.29, 0.0],
 # [0.285,0.03],[0.28,0.05],[0.27,0.08],[0.26,0.10],[0.25,0.12],[0.23,0.15],[0.18,0.21],[0.0,0.21]
 # ,[-0.18,0.21],[-0.23,0.15],[-0.25,0.12],[-0.26,0.10],[-0.27,0.08],[-0.28,0.05],[-0.285,0.03],[-0.29, 0.0]
@@ -17,7 +17,7 @@ rgbd_obstacle_layer:
   enabled:               true
   voxel_decay:           10.0 #20     #seconds if linear, e^n if exponential
   decay_model:           0      #0=linear, 1=exponential, -1=persistent
-  voxel_size:            0.05   #meters
+  voxel_size:            0.1   #meters
   track_unknown_space:   true   #default space is unknown
   observation_persistence: 0.0  #seconds
   max_obstacle_height:   1.5 #2.0    #meters

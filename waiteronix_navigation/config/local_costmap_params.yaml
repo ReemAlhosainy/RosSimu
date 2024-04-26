@@ -1,7 +1,7 @@
 local_costmap:
    publish_voxel_map: true
    global_frame: odom
-   robot_base_frame: base_link
+   robot_base_frame: robot_footprint
    update_frequency: 5.0
    publish_frequency: 2.0
    static_map: false
@@ -15,5 +15,5 @@ local_costmap:
    origin_y: 0.0
    plugins:
     - {name: laser_layer,         type: "costmap_2d::ObstacleLayer"} 
-#   - {name: rgbd_obstacle_layer, type: "spatio_temporal_voxel_layer/SpatioTemporalVoxelLayer"}
+    - {name: rgbd_obstacle_layer, type: "spatio_temporal_voxel_layer/SpatioTemporalVoxelLayer"}
     - {name: inflation_layer,     type: "costmap_2d::InflationLayer"}
