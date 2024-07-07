@@ -11,14 +11,11 @@ Panels:
         - /LocalMap1
         - /GlobalPlanner1
         - /LaserScan1
-        - /PointCloud21
+        - /Depth camera1
         - /LocalPlanner1
         - /Pose1
         - /Image1
-        - /PointCloud22
-        - /PointCloud23
-        - /PointCloud24
-        - /PointCloud25
+        - /Local Costmap1
       Splitter Ratio: 0.5
     Tree Height: 514
   - Class: rviz/Selection
@@ -219,27 +216,27 @@ Visualization Manager:
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
-        Max Value: 10
-        Min Value: -10
+        Max Value: 3.508333683013916
+        Min Value: 1.7525699138641357
         Value: true
       Axis: Z
       Channel Name: intensity
       Class: rviz/PointCloud2
       Color: 255; 255; 255
-      Color Transformer: Intensity
+      Color Transformer: RGB8
       Decay Time: 0
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Min Color: 0; 0; 0
-      Name: PointCloud2
+      Name: Depth camera
       Position Transformer: XYZ
       Queue Size: 10
       Selectable: true
       Size (Pixels): 3
       Size (m): 0.009999999776482582
       Style: Flat Squares
-      Topic: /move_base/DWAPlannerROS/cost_cloud
+      Topic: /kinect/depth/points
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
@@ -320,7 +317,7 @@ Visualization Manager:
         Min Value: -10
         Value: true
       Axis: Z
-      Channel Name: intensity
+      Channel Name: cost
       Class: rviz/PointCloud2
       Color: 255; 255; 255
       Color Transformer: Intensity
@@ -329,14 +326,14 @@ Visualization Manager:
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Min Color: 0; 0; 0
-      Name: PointCloud2
+      Name: DWA planner
       Position Transformer: XYZ
       Queue Size: 10
       Selectable: true
       Size (Pixels): 3
-      Size (m): 0.009999999776482582
-      Style: Spheres
-      Topic: /move_base/DWAPlannerROS/trajectory_cloud
+      Size (m): 0.05000000074505806
+      Style: Boxes
+      Topic: /move_base/DWAPlannerROS/cost_cloud
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
@@ -385,35 +382,7 @@ Visualization Manager:
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Min Color: 0; 0; 0
-      Name: PointCloud2
-      Position Transformer: XYZ
-      Queue Size: 10
-      Selectable: true
-      Size (Pixels): 3
-      Size (m): 0.009999999776482582
-      Style: Spheres
-      Topic: /move_base/global_costmap/rgbd_obstacle_layer/voxel_grid
-      Unreliable: false
-      Use Fixed Frame: true
-      Use rainbow: true
-      Value: true
-    - Alpha: 1
-      Autocompute Intensity Bounds: true
-      Autocompute Value Bounds:
-        Max Value: 10
-        Min Value: -10
-        Value: true
-      Axis: Z
-      Channel Name: intensity
-      Class: rviz/PointCloud2
-      Color: 255; 255; 255
-      Color Transformer: Intensity
-      Decay Time: 0
-      Enabled: true
-      Invert Rainbow: false
-      Max Color: 255; 255; 255
-      Min Color: 0; 0; 0
-      Name: PointCloud2
+      Name: Local Costmap
       Position Transformer: XYZ
       Queue Size: 10
       Selectable: true
@@ -453,7 +422,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 30.705089569091797
+      Distance: 32.002960205078125
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -469,9 +438,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.4397964477539062
+      Pitch: 1.4897964000701904
       Target Frame: <Fixed Frame>
-      Yaw: 3.2453954219818115
+      Yaw: 2.8803954124450684
     Saved: ~
 Window Geometry:
   Displays:

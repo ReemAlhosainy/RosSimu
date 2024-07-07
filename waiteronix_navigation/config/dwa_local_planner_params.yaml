@@ -1,7 +1,7 @@
 DWAPlannerROS:
 
 # Robot Configuration Parameters - Kobuki
-  max_vel_x: 2.0  # 0.5
+  max_vel_x: 3.0  # 0.5
   min_vel_x: 0.0 
 
   max_vel_y: 0.0  # diff drive robot
@@ -24,7 +24,7 @@ DWAPlannerROS:
   acc_lim_y: 0.0      # diff drive robot
 
 # Goal Tolerance Parameters
-  yaw_goal_tolerance: 5.0  # 0.05
+  yaw_goal_tolerance: 2.0 # 0.05
   xy_goal_tolerance: 0.5  # 0.10
   # latch_xy_goal_tolerance: false
 
@@ -45,7 +45,6 @@ DWAPlannerROS:
 
 # Oscillation Prevention Parameters
   oscillation_reset_dist: 0.05  # 0.05   - how far to travel before resetting oscillation flags
-
 # Debugging
   publish_traj_pc : true
   publish_cost_grid_pc: true

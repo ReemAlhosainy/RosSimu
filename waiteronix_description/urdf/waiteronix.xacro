@@ -268,7 +268,7 @@
     name="lidar_Link">
     <inertial>
       <origin
-        xyz="-2.7756E-17 5.889E-19 -0.032387"
+        xyz="2.7756E-17 5.889E-19 -0.032387"
         rpy="0 0 0" />
       <mass
         value="0.24913" />
@@ -309,7 +309,7 @@
     type="fixed">
     <origin
       xyz="0.13795 -1.8081E-05 0.0097229"
-      rpy="0 0 0" />
+      rpy="0 0 3.14159" />
     <parent
       link="base_link" />
     <child
